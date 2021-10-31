@@ -28,6 +28,7 @@ app.get('/getUser', (request, response) => {
 
 app.post('/addUser', (request, response) =>{
     try {
+        //Sample code
         //let schoolVar = request.body.object.school1;
         //console.log(request.body);
         return response.status(200).json("Added user " + request.body.username + " successfully");
