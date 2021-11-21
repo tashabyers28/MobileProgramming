@@ -52,7 +52,18 @@ const Student = mongoose.model("STUDENT");
 app.get('/getAllCourses', async (req, res) => {
     try {
         let courses = await Course.find({}).lean();
-        return res.status(200).json(courses);
+        return res.status(200).json({"courses": courses});
+    }
+    catch {
+        return res.status(500).json("Error - courses not found");
+    }
+});
+
+//for assignment_eight
+app.get('/getCourses', async (req, res) => {
+    try {
+        let courses = await Course.find({}).lean();
+        return res.status(200).json({"courses": courses});
     }
     catch {
         return res.status(500).json("Error - courses not found");
